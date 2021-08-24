@@ -1,3 +1,8 @@
+#__init__.py
+#Creates web app, creates database
+#Treats website folder as a package
+#Developer: Shavon Thadani
+#23/08/'21
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path

@@ -1,3 +1,7 @@
+#models.py
+#defines database and data stored in it
+#Developer: Shavon Thadani
+#23/08/'21
 from . import db
 from flask_login import UserMixin
 from sqlalchemy import func

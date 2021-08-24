@@ -1,16 +1,22 @@
+#views.py
+#backend for home page and delete button
+#Developer: Shavon Thadani
+#23/08/'21
 from flask import Blueprint,render_template, request, flash,jsonify
 from flask_login import login_required, current_user
 from .models import Note
 from . import db
 import json
+import speech_recognition
+import pyttsx3
 views = Blueprint('views',__name__)
 
+#home page
 @views.route('/',methods=['GET', 'POST'])
 @login_required
 def home():
     if request.method == 'POST':
         note = request.form.get('note')
-
         if len(note) < 1:
             flash("Note is too short!", category= 'error')
         else:
@@ -20,6 +26,7 @@ def home():
             flash("Note Added!", category= 'success')
     return render_template("home.html", user=current_user)
 
+#Deleting Note
 @views.route('/delete-note',methods=['POST'])
 def delete_note():
     note = json.loads(request.data)
