@@ -15,7 +15,6 @@ catch(e) {
 
 //Declare variables and access html elements
 var noteTextarea = $('#note');
-var instructions = $('#recording-instructions');
 var noteContent = '';
 //continue recording voice
 recognition.continuous = true;
